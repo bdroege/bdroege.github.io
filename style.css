@@ -1,0 +1,46 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #37ff00;
+    color: #000000;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+/* CSS for the header text */
+h1 {
+    font-size: 36px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+    animation: typing 5s steps(0, 28), hide-caret .5s step-end 1;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes hide-caret {
+    from, to { border-color: transparent; }
+}
+
+
+
+header a {
+    color: #000000;
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    margin: 0 60px;
+}
