@@ -1,13 +1,18 @@
 html, body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 body {
     background-color: black;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* The Header Itself */
 header {
     background-color: #37ff00;
     color: #000000;
@@ -26,6 +31,7 @@ h1 {
     font-size: 36px;
     white-space: nowrap;
     overflow: hidden;
+    font-family: 'Space Mono', monospace;
     border-right: .15em solid rgb(0, 0, 0);
     margin: 0;
     padding: 0;
@@ -41,11 +47,61 @@ h1 {
     from, to { border-color: transparent; }
 }
 
-
-
+/* The Header options (Home, Credits, Modules) */
 header a {
     color: #000000;
     text-decoration: none;
     font-family: 'Space Mono', monospace;
     margin: 0 60px;
+}
+
+.card-container {
+    display: flex;
+    padding: 300px; /* Vertical Height of the cards */
+    align-items: center;
+    justify-content: center;
+}
+.card {
+    min-width: 500px;
+    margin: 10px;
+    color: black;
+    font-family: 'Space Mono', monospace;
+    background-color: #37ff00;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.rain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+.rain-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.raindrop {
+    position: absolute;
+    background-color: #37ff00;
+    width: 2px;
+    height: 15px;
+    animation: fall linear infinite;
+}
+  
+@keyframes fall {
+to {
+    transform: translateY(100vh);
+}
 }
