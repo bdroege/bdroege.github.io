@@ -3,6 +3,11 @@ html, body {
     padding: 0;
 }
 
+body {
+    background-color: black;
+    color: white;
+}
+
 header {
     background-color: #37ff00;
     color: #000000;
