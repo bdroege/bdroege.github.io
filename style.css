@@ -123,3 +123,69 @@ img {
     height: auto;
     display: block;
 }
+
+/*
+CSS for the Collapsibles - pain in my ass
+*/
+
+input[type='checkbox'] { 
+    display: none; 
+} 
+.wrap-collapsible { 
+    margin: 1.2rem 0;
+} 
+.lbl-toggle { 
+    display: block; 
+    font-weight: bold; 
+    font-family: 'Space Mono', monospace;
+    background-color: #37ff00;
+    font-size: 1.2rem; 
+    text-transform: uppercase; 
+    text-align: center; 
+    padding: 10px; 
+    color: #000000; 
+    cursor: pointer; 
+    border-radius: 7px; 
+    margin-top: 100px;
+    transition: all 0.25s ease-out;
+} 
+.lbl-toggle:hover { 
+    color: #626262; 
+} 
+.lbl-toggle::before { 
+    content: ' '; 
+    display: inline-block; 
+    border-top: 5px solid transparent; 
+    border-bottom: 5px solid transparent; 
+    border-left: 5px solid currentColor; 
+    vertical-align: middle; 
+    margin-right: .7rem; 
+    transform: translateY(-2px); 
+    transition: transform .2s ease-out; 
+} 
+.toggle:checked + .lbl-toggle::before { 
+    transform: rotate(90deg) translateX(-3px); 
+} 
+.collapsible-content { 
+    max-height: 0px; 
+    overflow: hidden; 
+    transition: max-height .25s ease-in-out; 
+} 
+.toggle:checked + .lbl-toggle + .collapsible-content { 
+    max-height: 500px; /* may need to readjust */
+} 
+.toggle:checked + .lbl-toggle { 
+    border-bottom-right-radius: 0; 
+    border-bottom-left-radius: 0; 
+} 
+.collapsible-content .content-inner { 
+    background: rgba(115, 255, 0, 0.2); 
+    border-bottom: 1px solid  #37ff00;
+    border-bottom-left-radius: 7px; 
+    border-bottom-right-radius: 7px; 
+    padding: 1rem 1rem; 
+} 
+.collapsible-content p { 
+    margin-bottom: 0; 
+}
+

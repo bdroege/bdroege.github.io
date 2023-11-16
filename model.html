@@ -22,15 +22,42 @@
     </header>
     <script src="scripts\typewriter.js"></script>
 
-    <div class="text-pic-container">
-        <div class ="text-column">
-            <h2>OSI vs TCP/IP Model</h2>
-            <p>Here is my column of text, lots and lots of goodies.</p>
-        </div>
-        <div class ="img-column">
-            <img src="tcpmodel.webp" alt="TCP/IP/OSI">
-        </div>
+    <div class="wrap-collapsible"> 
+        <input id="collapsible1" class="toggle" type="checkbox"> 
+            <label for="collapsible1" class="lbl-toggle" tabindex="0">TCP / IP Information</label>
+                <div class="collapsible-content">
+                    <div class="content-inner">
+                        <p> Careen fluke jolly boat keel topgallant Admiral of the Black barkadeer sloop poop deck salmagundi. Avast red ensign parley clap of thunder no prey, no pay killick stern clipper execution dock splice the main brace. Grog blossom yardarm bilge water marooned cog wherry tackle aye Shiver me timbers come about.
+                        </p>
+                    </div>
+                </div>
     </div>
+  
+    <div class="wrap-collapsible"> 
+        <input id="collapsible2" class="toggle" type="checkbox"> 
+            <label for="collapsible2" class="lbl-toggle" tabindex="0">TCP / IP Continued</label>
+                <div class="collapsible-content">
+                    <div class="content-inner">
+                        <p>Fluke jolly boat keel topgallant Admiral of the Black barkadeer sloop poop deck salmagundi. Avast red ensign parley clap of thunder no prey, no pay killick stern clipper execution dock splice the main brace. Grog blossom yardarm bilge water marooned cog wherry tackle aye Shiver me timbers come about.
+                        </p>
+                    </div>
+                </div>
+    </div>
+    
+    <div class="wrap-collabsible"> 
+        <input id="collapsible3" class="toggle" type="checkbox"> 
+            <label for="collapsible3" class="lbl-toggle" tabindex="0">TCP / IP Quiz</label>
+                <div class="collapsible-content">
+                    <div class="content-inner">
+                        <p>Jolly boat keel topgallant Admiral of the Black barkadeer sloop poop deck salmagundi. Avast red ensign parley clap of thunder no prey, no pay killick stern clipper execution dock splice the main brace. Grog blossom yardarm bilge water marooned cog wherry tackle aye Shiver me timbers come about.
+                        </p>
+                    </div>
+                </div>
+    </div>
+
+    <script>
+        let myLabels = document.querySelectorAll('.lbl-toggle'); Array.from(myLabels).forEach(label => { label.addEventListener('keydown', e => { if (e.which === 32 || e.which === 13) { e.preventDefault(); label.click(); }; }); });
+        </script>
 
 
 </body>
