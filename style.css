@@ -124,6 +124,13 @@ img {
     display: block;
 }
 
+.page-top {
+    width: 100%;
+    height: 100px; /* Adjust the height as needed */
+    margin-top: 10px;
+    border: 1px solid #37ff00;
+}
+
 /*
 CSS for the Collapsibles - pain in my ass
 */
@@ -133,6 +140,8 @@ input[type='checkbox'] {
 } 
 .wrap-collapsible { 
     margin: 1.2rem 0;
+    margin-top: 100px;
+
 } 
 .lbl-toggle { 
     display: block; 
@@ -145,8 +154,8 @@ input[type='checkbox'] {
     padding: 10px; 
     color: #000000; 
     cursor: pointer; 
-    border-radius: 7px; 
-    margin-top: 100px;
+    border-radius: 10px; 
+    margin-top: 10px;
     transition: all 0.25s ease-out;
 } 
 .lbl-toggle:hover { 
@@ -172,7 +181,7 @@ input[type='checkbox'] {
     transition: max-height .25s ease-in-out; 
 } 
 .toggle:checked + .lbl-toggle + .collapsible-content { 
-    max-height: 500px; /* may need to readjust */
+    max-height: 350px; /* may need to readjust */
 } 
 .toggle:checked + .lbl-toggle { 
     border-bottom-right-radius: 0; 
@@ -188,4 +197,5 @@ input[type='checkbox'] {
 .collapsible-content p { 
     margin-bottom: 0; 
 }
+
 
