@@ -105,3 +105,21 @@ to {
     transform: translateY(100vh);
 }
 }
+
+.text-pic-container {
+    display: flex;
+    align-items: center;
+}
+.text-column {
+    max-width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.img-column {
+    max-width: 50%;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

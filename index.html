@@ -20,15 +20,15 @@
             <a href="#">Modules</a>
         </nav>
     </header>
-    <script src="typewriter.js"></script>
+    <script src="scripts\typewriter.js"></script>
 
     <div class="rain-overlay" id="rain-overlay">
         <div class= "rain-container" id="rain-container"></div>
     </div>
-    <script src="rain.js"></script>
+    <script src="scripts\rain.js"></script>
 
     <div class="card-container">
-        <div class="card" onclick="alert('Card 1 clicked')">
+        <div class="card" onclick="goToModelPage()">
             <h2>TCP / IP Model</h2>
             <p>Click to begin</p>
         </div>
@@ -43,6 +43,18 @@
             <p>Click to begin</p>
         </div>
     </div>
+
+    <script>
+        function goToModelPage() {
+            window.location.href = "model.html";
+        }
+        function goToLayersPage() {
+            window.location.href = "layers.html";
+        }
+        function goToSecurityPage() {
+            window.location.href = "security.html";
+        }
+    </script>
 
 </body>
 </html>

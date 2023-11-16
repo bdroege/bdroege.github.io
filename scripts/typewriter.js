@@ -1,6 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const headerText = "Network Protocols & Security";
+    const pageTitle = document.title;
     const headerElement = document.getElementById("header-title");
+    let headerText;
+
+    if (pageTitle == "CprE 530 - Network & Security") {
+        headerText = "Network Protocols & Security";
+    } else if (pageTitle == "CprE 530 - Network & Security - TCP/IP Model") {
+        headerText = "TCP/IP Model";
+    } else {
+        headerText = "Default";
+    }
 
     typeWriter(headerElement, headerText);
 });
