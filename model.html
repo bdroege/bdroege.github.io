@@ -27,7 +27,20 @@
     <div class="wrap-collapsible"> 
         <div class="page-top">
             <h1>Understanding the Background</h1>
-                <p>Let's look at some history!!</p>
+                <p>Starting back in 1983, the OSI Model (Open System Interconnection) was developed to to address the heterogeneous network interconnection compatibility issues.
+                    The OSI Model consists of seven (7) layers that have their own responsibilities and duties.
+                    <ol>
+                        Layer 7: Application <br>
+                        Layer 6: Presentation <br>
+                        Layer 5: Session <br>
+                        Layer 4: Transport <br>
+                        Layer 3: Network <br>
+                        Layer 2: Data Link <br>
+                        Layer 1: Physical <br>
+                    </ol>
+                    In current days, the OSI Model is no longer used or heavily supported as it's difficult to adapt, modify, and grow in the current and growing age of interconnections. While the model may not be directly implemented in every day networking situations, its core concepts continue to be valuable and essential for understanding network architecture and communication protocols.
+                </p>
+
         </div>
         <input id="collapsible1" class="toggle" type="checkbox"> 
             <label for="collapsible1" class="lbl-toggle" tabindex="0">TCP / IP Background</label>
@@ -54,11 +67,24 @@
                     </div>
                 </div>
 
+        <footer>
+              <div class = "references">
+                    <h2>References</h2>
+                            <ul>
+                                <li>Y. Li, D. Li, W. Cui and R. Zhang, "Research based on OSI model," 2011 IEEE 3rd International Conference on Communication Software and Networks, Xi'an, China, 2011, pp. 554-557, doi: 10.1109/ICCSN.2011.6014631.</li>
+                                <li>Author, B. (Year). Title of the second reference. <i>Book Title</i>. Publisher.</li>
+                            </ul>
+                </div>
+        </footer>
+
     </div>
 
     <script>
         let myLabels = document.querySelectorAll('.lbl-toggle'); Array.from(myLabels).forEach(label => { label.addEventListener('keydown', e => { if (e.which === 32 || e.which === 13) { e.preventDefault(); label.click(); }; }); });
         </script>
+
+
+
 
 
 </body>

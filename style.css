@@ -126,7 +126,7 @@ img {
 
 .page-top {
     width: 100%;
-    height: 100px; /* Adjust the height as needed */
+    height: flex; /* Adjust the height as needed */
     margin-top: 10px;
     border: 1px solid #37ff00;
 }
@@ -139,7 +139,7 @@ input[type='checkbox'] {
     display: none; 
 } 
 .wrap-collapsible { 
-    margin: 1.2rem 0;
+    margin: 1.2rem 1.2rem;
     margin-top: 100px;
 
 } 
@@ -198,4 +198,26 @@ input[type='checkbox'] {
     margin-bottom: 0; 
 }
 
+footer {
+    background-color: #000000;
+    padding: 20px;
+    text-align: center;
+}
 
+.references {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.references h2 {
+    color: #333;
+}
+
+.references ul {
+    list-style: none;
+    padding: 0;
+}
+
+.references li {
+    margin-bottom: 10px;
+}
