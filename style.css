@@ -57,12 +57,12 @@ header a {
 
 .card-container {
     display: flex;
-    padding: 300px; /* Vertical Height of the cards */
+    padding: 15%; /* Vertical Height of the cards */
     align-items: center;
     justify-content: center;
 }
 .card {
-    min-width: 500px;
+    min-width: 25vw;
     margin: 10px;
     color: black;
     font-family: 'Space Mono', monospace;
