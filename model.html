@@ -21,6 +21,8 @@
         </nav>
     </header>
     <script src="scripts\typewriter.js"></script>
+    <script src="scripts\truefalsevalidation.js"></script>
+
 
 
 
@@ -44,16 +46,18 @@
 
         </div>
         <input id="collapsible1" class="toggle" type="checkbox"> 
-            <label for="collapsible1" class="lbl-toggle" tabindex="0">TCP / IP Background</label>
+            <label for="collapsible1" class="lbl-toggle" tabindex="0">TCP/IP Explained</label>
                 <div class="collapsible-content">
                     <div class="content-inner">
                         <h2>So what is the TCP/IP Model? </h2>
-                            <p>The TCP/IP Model (Transition Control Protocol / Internet Protocol) is merely a simplified, faster, and more advanced version of the OSI Model.
-                        </p>
-                    </div>
+                            <p>The TCP/IP Model (Transition Control Protocol / Internet Protocol) is merely a simplified, faster, and more advanced version of the OSI Model.</p>
+                            <br><p>With the beginning of the model and TCP/IP, in 1982, it was originally designed to communicate between two distant computers by means of packets. These packets would be reliable, stable, and secure whilst in transit. Since the evolution of the model, we now use the TCP/IP model to navigate packets throughout networks through the Internet Protocol with the secureness of the Transmission Control Protocol; even more, TCP is now bidirectional and capable of receiving and sending packets at the same time</p>
+                            <br><p>With a little bit of oversight, let’s dive into what the TCP/IP Network Model actually is and how it works. First and foremost, it’s a suite of protocols and rules that define how an action is to behave. As learned prior, TCP is a connection-based protocol that ensures a stable connection between the two communicating parties, thus the spawn of the three-way handshake. The Three-Way Handshake is when the initiating computer sends an “SYN” (synchronize) bit to the receiving computer, the receiving computer will then send an “SYN/ACK” bit that synchronizes and acknowledges the request, and finally, the initiating computer completes the handshake with an “ACK” bit to confirm the connection - this has now opened the door for reliable transit of data.</p>
+                            <br><p>Now that we know what the TCP/IP Network Model is and what it does, let’s look at the individual layers. Starting from the top, we have the Application Layer, The Transport Layer, the Internet Layer, and then the Network Access/Physical Layer. The TCP/IP Network Model starts with the Application Layer which encompasses the Application, Presentation, and Session layer of the OSI model. This layer allows the user to access the network and interact with the data, typically with HTTP, FTP, or SMTP. We then move to the Transport Layer, which provides a reliable data connection between the two communicating devices. This is where the TCP/UDP protocol lives. We move to the Internet Layer that controls the flow and traffic routing - where our Internet Protocol and routers live. Lastly, we have our Physical Network Access Layer that handles the physical components nad infrastructure, so the cables, the drivers, and the NIC (Network Interface Cards).</p>
+                        </div>
                 </div>
         <input id="collapsible2" class="toggle" type="checkbox"> 
-            <label for="collapsible2" class="lbl-toggle" tabindex="0">TCP / IP Continued</label>
+            <label for="collapsible2" class="lbl-toggle" tabindex="0">Fill in the Blank</label>
                 <div class="collapsible-content">
                     <div class="content-inner">
                         <p>Fluke jolly boat keel topgallant Admiral of the Black barkadeer sloop poop deck salmagundi. Avast red ensign parley clap of thunder no prey, no pay killick stern clipper execution dock splice the main brace. Grog blossom yardarm bilge water marooned cog wherry tackle aye Shiver me timbers come about.
@@ -61,52 +65,52 @@
                     </div>
                 </div>
         <input id="collapsible3" class="toggle" type="checkbox"> 
-            <label for="collapsible3" class="lbl-toggle" tabindex="0">TCP / IP Quiz</label>
+            <label for="collapsible3" class="lbl-toggle" tabindex="0">Drag and Drop</label>
                 <div class="collapsible-content">
                     <div class="content-inner">
                         <h2>TCP/IP Network Layers</h2>
-
+                        <h3>Match the corresponding item on the right with the specified column on the left. Assume Layer 4 is the end user.</h3>
                         <div class="dnd-card-container">
                             <div class="dnd-column" id="layerSection">
-                                <div class="dnd-card-category" data-catagory="layer4">
+                                <div class="dnd-card-category" data-category="layer4">
                                     <h3>Layer 4:</h3>
                                     <div class="dnd-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
                                     </div>
                                 </div>
                             
-                                <div class="dnd-card-category" data-catagory="layer3">
+                                <div class="dnd-card-category" data-category="layer3">
                                     <h3>Layer 3:</h3>
                                     <div class="dnd-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
                                     </div>
                                 </div>
-                                <div class="dnd-card-category" data-catagory="layer2">
+                                <div class="dnd-card-category" data-category="layer2">
                                     <h3>Layer 2:</h3>
                                     <div class="dnd-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">    
                                     </div>
                                 </div>
-                                <div class="dnd-card-category" data-catagory="layer1">
+                                <div class="dnd-card-category" data-category="layer1">
                                     <h3>Layer 1:</h3>
                                     <div class="dnd-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">        
                                     </div>
                                 </div>
                             </div>
                             <div class="dnd-column" id="protocolSection">
-                                <div class="dnd-card-category" data-catagory="layer4">
+                                <div class="dnd-card-category" data-category="layer4P">
                                     <h3>Protocol(s):</h3>
                                     <div class="dnd-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
                                     </div>
                                 </div>
-                                <div class="dnd-card-category" data-catagory="layer3">
+                                <div class="dnd-card-category" data-category="layer3P">
                                     <h3>Protocol(s):</h3>
                                     <div class="dnd-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
                                     </div>
                                 </div>
-                                <div class="dnd-card-category" data-catagory="layer2">
+                                <div class="dnd-card-category" data-category="layer2P">
                                     <h3>Protocol(s):</h3>
                                     <div class="dnd-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
                                     </div>
                                 </div>
-                                <div class="dnd-card-category" data-catagory="layer1">
+                                <div class="dnd-card-category" data-category="layer1P">
                                     <h3>Protocol(s):</h3>
                                     <div class="dnd-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
                                     </div>
@@ -114,32 +118,76 @@
                             </div>
 
                             <div class="dnd-wordbank-container">
-                                <div id="ApplicationLayer" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-catagory="layer4">Application Layer</div>
-                                <div id="TransportLayer" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-catagory="layer3">Transport Layer</div>
-                                <div id="InternetLayer" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-catagory="layer2">Internet Layer</div>
-                                <div id="PhysicalLayer" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-catagory="layer1">Physical Layer</div>
-
-                                <div id="ApplicationLayerProtocols" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-catagory="layer4">HTTP, FTP, SMTP</div>
-                                <div id="TransportLayerProtocols" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-catagory="layer3">TCP, UDP</div>
-                                <div id="InternetLayerProtocols" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-catagory="layer2">IP, Routers</div>
-                                <div id="PhysicalLayerProtocols" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-catagory="layer1">Ethernet, Cables, NIC</div>
+                                <div id="InternetLayerProtocols" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-category="layer2P">IP, Routers</div>
+                                <div id="TransportLayer" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-category="layer3">Transport Layer</div>
+                                <div id="ApplicationLayer" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-category="layer4">Application Layer</div>
+                                <div id="TransportLayerProtocols" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-category="layer3P">TCP, UDP</div>
+                                <div id="PhysicalLayer" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-category="layer1">Physical Layer</div>
+                                <div id="InternetLayer" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-category="layer2">Internet Layer</div>
+                                <div id="ApplicationLayerProtocols" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-category="layer4P">HTTP, FTP, SMTP</div>
+                                <div id="PhysicalLayerProtocols" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-category="layer1P">Ethernet, Cables, NIC</div>
                             </div>
                         </div>
+                        <p>Upon completion, you should have a better understanding on how and where the layers interact within network.</p>
                         <script src="scripts\dragndrop"></script>
                     </div>
                 </div>
+        <input id="collapsible4" class="toggle" type="checkbox"> 
+            <label for="collapsible4" class="lbl-toggle" tabindex="0">True or False</label>
+                <div class="collapsible-content">
+                    <div class="content-inner">
+                       <h2>Answer the following True/False Questions</h2>
+                        <div class="tf-container">
+                            <div class="tf-question">1) The OSI (Open Systems Interconnection) Network Model was developed and invented before the TCP/IP (Transmission Control Protocol / Internet Protocol) Network Model.</div>
+                            <button class="btn" onclick="checkAnswer(this)" data-correct="false">True</button>
+                            <button class="btn" onclick="checkAnswer(this)" data-correct="true">False</button>
+                        </div>
+<br>
+                        <div class="tf-container">
+                            <div class="tf-question">2) TCP (Transmission Control Protocol) provides a more reliable and stable connection than UDP (User Data Program).</div>
+                            <button class="btn" onclick="checkAnswer(this)" data-correct="true">True</button>
+                            <button class="btn" onclick="checkAnswer(this)" data-correct="false">False</button>
+                        </div>
+<br>
+                        <div class="tf-container">
+                            <div class="tf-question">3) The OSI (Open Systems Interconnection) Network Model is not implemented in modern day systems, but rather a learning and educational resource to see how data moves.</div>
+                            <button class="btn" onclick="checkAnswer(this)" data-correct="true">True</button>
+                            <button class="btn" onclick="checkAnswer(this)" data-correct="false">False</button>
+                        </div>
+<br>
+                        <div class="tf-container">
+                            <div class="tf-question">4) Starting from the End User, the TCP/IP Network Model goes like this, End User --> Physical Layer --> Internet Layer --> Transport Layer --> Application Layer. </div>
+                            <button class="btn" onclick="checkAnswer(this)" data-correct="false">True</button>
+                            <button class="btn" onclick="checkAnswer(this)" data-correct="true">False</button>
+                        </div>
+<br>
+                        <div class="tf-container">
+                            <div class="tf-question">5) The Three-Way-Handshake establishes a stable communication between two networking devices. </div>
+                            <button class="btn" onclick="checkAnswer(this)" data-correct="true">True</button>
+                            <button class="btn" onclick="checkAnswer(this)" data-correct="false">False</button>
+                        </div>
+<br>
+                    <p>This was purely participation based meant to test your understanding and comprehension of the material presented.</p>
+
+                    </div>
+                </div>
+
+
 
         <footer>
               <div class = "references">
                     <h2>References</h2>
                             <ul>
                                 <li>Y. Li, D. Li, W. Cui and R. Zhang, "Research based on OSI model," 2011 IEEE 3rd International Conference on Communication Software and Networks, Xi'an, China, 2011, pp. 554-557, doi: 10.1109/ICCSN.2011.6014631.</li>
-                                <li>Author, B. (Year). Title of the second reference. <i>Book Title</i>. Publisher.</li>
+                                <li>“Introductory networking,” TryHackMe, https://tryhackme.com/room/introtonetworking (accessed Nov. 24, 2023).</li>
+                                <li>“History of TCP/IP,” GeeksforGeeks, https://www.geeksforgeeks.org/history-of-tcp-ip/ (accessed Nov. 24, 2023). </li>
+                                <li>D. Bodnar, What is TCP/IP?, https://www.avg.com/en/signal/what-is-tcp-ip#:~:text=There%20are%20four%20layers%20of%20the%20TCP%2FIP%20model%3A,in%20reverse%20order%20when%20the%20data%20is%20received. (accessed Nov. 25, 2023). /li>
                             </ul>
                 </div>
         </footer>
 
     </div>
+
 
     <script>
         let myLabels = document.querySelectorAll('.lbl-toggle'); Array.from(myLabels).forEach(label => { label.addEventListener('keydown', e => { if (e.which === 32 || e.which === 13) { e.preventDefault(); label.click(); }; }); });

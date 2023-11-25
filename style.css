@@ -199,7 +199,7 @@ input[type='checkbox'] {
     padding: 1rem 1rem; 
 } 
 .collapsible-content p { 
-    margin-bottom: 0; 
+    margin-bottom: 100px; 
 }
 
 footer {
@@ -209,7 +209,6 @@ footer {
 }
 
 .references {
-    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -268,4 +267,41 @@ footer {
     text-align: center;
     margin: 5px;
     cursor: grab;
+}
+
+/* The TRUE / FALSE Section */
+
+.tf-container {
+    text-align: left;
+    max-width: auto;
+    margin: auto;  
+}
+.tf-question {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.answer-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    color:#37ff00;
+    border: 1px solid #37ff00;
+    border-radius: 20px;
+    background-color: #ffffff00;
+    transition: background-color 0.3s;
+}
+
+.btn.correct {
+    background-color: #37ff005a; /* Green for correct answer */
+}
+
+.btn.incorrect {
+    background-color: #ff00005a; /* Red for incorrect answer */
 }
