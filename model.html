@@ -64,8 +64,68 @@
             <label for="collapsible3" class="lbl-toggle" tabindex="0">TCP / IP Quiz</label>
                 <div class="collapsible-content">
                     <div class="content-inner">
-                        <p>Jolly boat keel topgallant Admiral of the Black barkadeer sloop poop deck salmagundi. Avast red ensign parley clap of thunder no prey, no pay killick stern clipper execution dock splice the main brace. Grog blossom yardarm bilge water marooned cog wherry tackle aye Shiver me timbers come about.
-                        </p>
+                        <h2>TCP/IP Network Layers</h2>
+
+                        <div class="dnd-card-container">
+                            <div class="dnd-column" id="layerSection">
+                                <div class="dnd-card-category" data-catagory="layer4">
+                                    <h3>Layer 4:</h3>
+                                    <div class="dnd-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                    </div>
+                                </div>
+                            
+                                <div class="dnd-card-category" data-catagory="layer3">
+                                    <h3>Layer 3:</h3>
+                                    <div class="dnd-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                    </div>
+                                </div>
+                                <div class="dnd-card-category" data-catagory="layer2">
+                                    <h3>Layer 2:</h3>
+                                    <div class="dnd-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">    
+                                    </div>
+                                </div>
+                                <div class="dnd-card-category" data-catagory="layer1">
+                                    <h3>Layer 1:</h3>
+                                    <div class="dnd-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dnd-column" id="protocolSection">
+                                <div class="dnd-card-category" data-catagory="layer4">
+                                    <h3>Protocol(s):</h3>
+                                    <div class="dnd-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                    </div>
+                                </div>
+                                <div class="dnd-card-category" data-catagory="layer3">
+                                    <h3>Protocol(s):</h3>
+                                    <div class="dnd-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                    </div>
+                                </div>
+                                <div class="dnd-card-category" data-catagory="layer2">
+                                    <h3>Protocol(s):</h3>
+                                    <div class="dnd-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                    </div>
+                                </div>
+                                <div class="dnd-card-category" data-catagory="layer1">
+                                    <h3>Protocol(s):</h3>
+                                    <div class="dnd-dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dnd-wordbank-container">
+                                <div id="ApplicationLayer" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-catagory="layer4">Application Layer</div>
+                                <div id="TransportLayer" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-catagory="layer3">Transport Layer</div>
+                                <div id="InternetLayer" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-catagory="layer2">Internet Layer</div>
+                                <div id="PhysicalLayer" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-catagory="layer1">Physical Layer</div>
+
+                                <div id="ApplicationLayerProtocols" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-catagory="layer4">HTTP, FTP, SMTP</div>
+                                <div id="TransportLayerProtocols" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-catagory="layer3">TCP, UDP</div>
+                                <div id="InternetLayerProtocols" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-catagory="layer2">IP, Routers</div>
+                                <div id="PhysicalLayerProtocols" class="dnd-wordbank" draggable="true" ondragstart="drag(event)" data-catagory="layer1">Ethernet, Cables, NIC</div>
+                            </div>
+                        </div>
+                        <script src="scripts\dragndrop"></script>
                     </div>
                 </div>
 

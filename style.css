@@ -1,11 +1,14 @@
 html, body {
     margin: 0;
     padding: 0;
+    overflow-y: auto;
     overflow: hidden;
 }
 
 body {
     background-color: black;
+    overflow-y: auto;
+
     color: white;
     display: flex;
     align-items: center;
@@ -178,6 +181,7 @@ input[type='checkbox'] {
 .collapsible-content { 
     max-height: 0px; 
     overflow: hidden; 
+    overflow-y: auto;
     transition: max-height .25s ease-in-out; 
 } 
 .toggle:checked + .lbl-toggle + .collapsible-content { 
@@ -220,4 +224,48 @@ footer {
 
 .references li {
     margin-bottom: 10px;
+}
+
+/* DRAG-AND-DROP GAME CSS */
+
+.dnd-card-container {
+    display: flex;
+}
+
+.dnd-column {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    overflow-y: auto;
+    position: relative; /* Set position to relative for proper sticky behavior */
+    max-height: 400px; /* Set a maximum height for the column */
+}
+
+.dnd-card-category {
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    margin: 5px;
+    padding: 10px;
+}
+
+.dnd-dropzone {
+    border: 2px dashed #ffffff;
+    border-radius: 8px;
+    min-height: 100px; /* Set a minimum height */
+    margin-top: 10px;
+}
+
+.dnd-wordbank-container {
+    display: flex;
+    flex-direction: column;
+    overflow: auto; /* Allow scrolling if content overflows */
+}
+
+.dnd-wordbank {
+    border: 2px solid #ffffff;
+    border-radius: 20%; 
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
+    cursor: grab;
 }

@@ -1,0 +1,42 @@
+function allowDrop(event) {
+  event.preventDefault();
+}
+
+function drag(event) {
+  event.dataTransfer.setData("text", event.target.id);
+}
+
+function drop(event) {
+  event.preventDefault();
+  const data = event.dataTransfer.getData("text");
+  const draggedElement = document.getElementById(data);
+  const dropzone = event.target.closest(".dnd-dropzone");
+
+  if (dropzone && dropzone.parentElement.dataset.category === draggedElement.dataset.category) {
+    dropzone.appendChild(draggedElement);
+    validate();
+  }
+}
+
+function validate() {
+  const categories = document.querySelectorAll(".dnd-card-category");
+  let allCorrect = true;
+
+  categories.forEach(category => {
+    const categoryWords = category.querySelectorAll(".dnd-wordbank");
+    if (categoryWords.length > 0) {
+      const categoryData = category.dataset.category;
+      categoryWords.forEach(word => {
+        if (word.dataset.category !== categoryData) {
+          allCorrect = false;
+        }
+      });
+    } else {
+      allCorrect = false;
+    }
+  });
+
+  if (allCorrect) {
+    alert("Congratulations! You have placed all words correctly.");
+  }
+}
