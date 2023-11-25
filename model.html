@@ -20,8 +20,10 @@
             <a href="#">Modules</a>
         </nav>
     </header>
+    <script src="scripts\rain.js"></script>
     <script src="scripts\typewriter.js"></script>
     <script src="scripts\truefalsevalidation.js"></script>
+    <script src="scripts\fitbvalidation.js"></script>
 
 
 
@@ -29,7 +31,7 @@
     <div class="wrap-collapsible"> 
         <div class="page-top">
             <h1>Understanding the Background</h1>
-                <p>Starting back in 1983, the OSI Model (Open System Interconnection) was developed to to address the heterogeneous network interconnection compatibility issues.
+                <p>Starting back in 1984, the OSI Model (Open System Interconnection) was first published by the ISO (International Organization for Standardization) and developed to to address the heterogeneous network interconnection compatibility issues.
                     The OSI Model consists of seven (7) layers that have their own responsibilities and duties.
                     <ol>
                         Layer 7: Application <br>
@@ -50,18 +52,54 @@
                 <div class="collapsible-content">
                     <div class="content-inner">
                         <h2>So what is the TCP/IP Model? </h2>
-                            <p>The TCP/IP Model (Transition Control Protocol / Internet Protocol) is merely a simplified, faster, and more advanced version of the OSI Model.</p>
-                            <br><p>With the beginning of the model and TCP/IP, in 1982, it was originally designed to communicate between two distant computers by means of packets. These packets would be reliable, stable, and secure whilst in transit. Since the evolution of the model, we now use the TCP/IP model to navigate packets throughout networks through the Internet Protocol with the secureness of the Transmission Control Protocol; even more, TCP is now bidirectional and capable of receiving and sending packets at the same time</p>
-                            <br><p>With a little bit of oversight, let’s dive into what the TCP/IP Network Model actually is and how it works. First and foremost, it’s a suite of protocols and rules that define how an action is to behave. As learned prior, TCP is a connection-based protocol that ensures a stable connection between the two communicating parties, thus the spawn of the three-way handshake. The Three-Way Handshake is when the initiating computer sends an “SYN” (synchronize) bit to the receiving computer, the receiving computer will then send an “SYN/ACK” bit that synchronizes and acknowledges the request, and finally, the initiating computer completes the handshake with an “ACK” bit to confirm the connection - this has now opened the door for reliable transit of data.</p>
-                            <br><p>Now that we know what the TCP/IP Network Model is and what it does, let’s look at the individual layers. Starting from the top, we have the Application Layer, The Transport Layer, the Internet Layer, and then the Network Access/Physical Layer. The TCP/IP Network Model starts with the Application Layer which encompasses the Application, Presentation, and Session layer of the OSI model. This layer allows the user to access the network and interact with the data, typically with HTTP, FTP, or SMTP. We then move to the Transport Layer, which provides a reliable data connection between the two communicating devices. This is where the TCP/UDP protocol lives. We move to the Internet Layer that controls the flow and traffic routing - where our Internet Protocol and routers live. Lastly, we have our Physical Network Access Layer that handles the physical components nad infrastructure, so the cables, the drivers, and the NIC (Network Interface Cards).</p>
+                            <p>The TCP/IP Model (Transition Control Protocol / Internet Protocol) is merely a simplified, faster, and more advanced version of the OSI Model.
+                            <br><br>With the beginning of the model and TCP/IP, in the early 1970's, it was originally designed to communicate between two distant computers by means of packets. These packets would be reliable, stable, and secure whilst in transit. Since the evolution of the model, we now use the TCP/IP model to navigate packets throughout networks through the Internet Protocol with the secureness of the Transmission Control Protocol; even more, TCP is now bidirectional and capable of receiving and sending packets at the same time
+                            <br><br>With a little bit of oversight, let’s dive into what the TCP/IP Network Model actually is and how it works. First and foremost, it’s a suite of protocols and rules that define how an action is to behave. As learned prior, TCP is a connection-based protocol that ensures a stable connection between the two communicating parties, thus the spawn of the three-way handshake. The Three-Way Handshake is when the initiating computer sends an “SYN” (synchronize) bit to the receiving computer, the receiving computer will then send an “SYN/ACK” bit that synchronizes and acknowledges the request, and finally, the initiating computer completes the handshake with an “ACK” bit to confirm the connection - this has now opened the door for reliable transit of data.
+                            <br><br>Now that we know what the TCP/IP Network Model is and what it does, let’s look at the individual layers. Starting from the top, we have the Application Layer, The Transport Layer, the Internet Layer, and then the Network Access/Physical Layer. The TCP/IP Network Model starts with the Application Layer which encompasses the Application, Presentation, and Session layer of the OSI model. This layer allows the user to access the network and interact with the data, typically with HTTP, FTP, or SMTP. We then move to the Transport Layer, which provides a reliable data connection between the two communicating devices. This is where the TCP/UDP protocol lives. We move to the Internet Layer that controls the flow and traffic routing - where our Internet Protocol and routers live. Lastly, we have our Physical Network Access Layer that handles the physical components nad infrastructure, so the cables, the drivers, and the NIC (Network Interface Cards).
+                            <ol>
+                                Layer 4: Application <br>
+                                Layer 3: Transport <br>
+                                Layer 2: Internet <br>
+                                Layer 1: Physical <br>
+                            </ol>
+                        As we can see, the TCP/IP Model encompassed the OSI's Application, Presentation, and Session Layer into one.
+                        <br><br>The TCP/IP Model also combined the OSI's Data Link and Physical Layer into one "Physical Network Access Layer". 
+                        
+
+
+                        </p>
                         </div>
                 </div>
         <input id="collapsible2" class="toggle" type="checkbox"> 
             <label for="collapsible2" class="lbl-toggle" tabindex="0">Fill in the Blank</label>
                 <div class="collapsible-content">
                     <div class="content-inner">
-                        <p>Fluke jolly boat keel topgallant Admiral of the Black barkadeer sloop poop deck salmagundi. Avast red ensign parley clap of thunder no prey, no pay killick stern clipper execution dock splice the main brace. Grog blossom yardarm bilge water marooned cog wherry tackle aye Shiver me timbers come about.
-                        </p>
+                       <h2>Fill in the Blank with the correct answer:</h2>
+                       
+                        <div class="fitb-question-container">
+                            <div class="question" id="Q1">
+                                <p>1) The OSI (Open System Interconnection) Model was developed in the year <input type="text" class="fitb-blank" data-answer="1984">
+                                <button class= "fitb-btn" onclick="checkAnswer('Q1')" id="result-Q1">Check Answer</button>
+
+                            </div>
+                            <div class="question" id="Q2">
+                                <p>2) To start the three-way handshake, the initiating device sends what bit to the receiving device? <input type="text" class="fitb-blank" data-answer="SYN">
+                                    <button class= "fitb-btn" onclick="checkAnswer('Q2')" id="result-Q2">Check Answer</button>
+                            </div>
+                            <div class="question" id="Q3">
+                                <p>3) The receiving computer then sends this bit back: <input type="text" class="fitb-blank" data-answer="SYN/ACK">
+                                    <button class= "fitb-btn" onclick="checkAnswer('Q3')" id="result-Q3">Check Answer</button>
+                            </div>
+                            <div class="question" id="Q4">
+                                <p>4) To end it, the initiating computer completes the handshake with this bit: <input type="text" class="fitb-blank" data-answer="ACK">
+                                    <button class= "fitb-btn" onclick="checkAnswer('Q4')" id="result-Q4">Check Answer</button>
+                            </div>
+
+
+
+                        </div>
+
+
                     </div>
                 </div>
         <input id="collapsible3" class="toggle" type="checkbox"> 
@@ -142,31 +180,31 @@
                             <button class="btn" onclick="checkAnswer(this)" data-correct="false">True</button>
                             <button class="btn" onclick="checkAnswer(this)" data-correct="true">False</button>
                         </div>
-<br>
+                        <br>
                         <div class="tf-container">
                             <div class="tf-question">2) TCP (Transmission Control Protocol) provides a more reliable and stable connection than UDP (User Data Program).</div>
                             <button class="btn" onclick="checkAnswer(this)" data-correct="true">True</button>
                             <button class="btn" onclick="checkAnswer(this)" data-correct="false">False</button>
                         </div>
-<br>
+                        <br>
                         <div class="tf-container">
                             <div class="tf-question">3) The OSI (Open Systems Interconnection) Network Model is not implemented in modern day systems, but rather a learning and educational resource to see how data moves.</div>
                             <button class="btn" onclick="checkAnswer(this)" data-correct="true">True</button>
                             <button class="btn" onclick="checkAnswer(this)" data-correct="false">False</button>
                         </div>
-<br>
+                        <br>
                         <div class="tf-container">
                             <div class="tf-question">4) Starting from the End User, the TCP/IP Network Model goes like this, End User --> Physical Layer --> Internet Layer --> Transport Layer --> Application Layer. </div>
                             <button class="btn" onclick="checkAnswer(this)" data-correct="false">True</button>
                             <button class="btn" onclick="checkAnswer(this)" data-correct="true">False</button>
                         </div>
-<br>
+                        <br>
                         <div class="tf-container">
                             <div class="tf-question">5) The Three-Way-Handshake establishes a stable communication between two networking devices. </div>
                             <button class="btn" onclick="checkAnswer(this)" data-correct="true">True</button>
                             <button class="btn" onclick="checkAnswer(this)" data-correct="false">False</button>
                         </div>
-<br>
+                                            <br>
                     <p>This was purely participation based meant to test your understanding and comprehension of the material presented.</p>
 
                     </div>

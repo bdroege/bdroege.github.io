@@ -199,7 +199,7 @@ input[type='checkbox'] {
     padding: 1rem 1rem; 
 } 
 .collapsible-content p { 
-    margin-bottom: 100px; 
+    margin-bottom: 50px; 
 }
 
 footer {
@@ -304,4 +304,31 @@ footer {
 
 .btn.incorrect {
     background-color: #ff00005a; /* Red for incorrect answer */
+}
+
+/* FILL IN THE BLANK Section */
+
+.fitb-question-container {
+    text-align: left;
+}
+
+.fitb-blank {
+    border: 1px dashed #37ff00;
+    padding: 5px;
+    border-radius: 20px;
+    background: rgba(115, 255, 0, 0.2);
+    color:#ffffff;
+    text-align: center;
+}
+
+.fitb-btn {
+    font-size: 16px;
+    padding: 5px 20px;
+    margin: 5px 1px 1px 50px;
+    cursor: pointer;
+    color:#37ff00;
+    border: 1px solid #37ff00;
+    border-radius: 20px;
+    background-color: #ffffff00;
+    transition: background-color 0.3s;
 }

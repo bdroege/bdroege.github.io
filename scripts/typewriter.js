@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
         headerText = "Network Protocols & Security";
     } else if (pageTitle == "CprE 530 - Network & Security - TCP/IP Model") {
         headerText = "TCP/IP Model";
+    } else if (pageTitle == "CprE 530 - Network & Security - Network Layers") {
+        headerText = "Network Layers";
     } else {
         headerText = "Default";
     }

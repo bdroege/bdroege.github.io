@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CprE 530 - Network & Security - Network Layers</title>
+    <link rel="icon" type="image/svg+xml" href="assets\icon.svg">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <h1 id="header-title"></h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Credits</a>
+            <a href="#">Modules</a>
+        </nav>
+    </header>
+    <script src="scripts\rain.js"></script>
+    <script src="scripts\typewriter.js"></script>
+    <script src="scripts\truefalsevalidation.js"></script>
+    <script src="scripts\fitbvalidation.js"></script>
+
+
+
+
+    <div class="wrap-collapsible"> 
+        <div class="page-top">
+            <h1>Understanding the Background</h1>
+                <p>Starting back in 1984, the OSI Model (Open System Interconnection) was first published by the ISO (International Organization for Standardization) and developed to to address the heterogeneous network interconnection compatibility issues.</p>
+
+        </div>
+        <input id="collapsible1" class="toggle" type="checkbox"> 
+            <label for="collapsible1" class="lbl-toggle" tabindex="0">Network Layers Explained</label>
+                <div class="collapsible-content">
+                    <div class="content-inner">
+                        <h2>So what is the TCP/IP Model? </h2>
+                    </div>
+                </div>
+        <input id="collapsible2" class="toggle" type="checkbox"> 
+            <label for="collapsible2" class="lbl-toggle" tabindex="0">Fill in the Blank</label>
+                <div class="collapsible-content">
+                    <div class="content-inner">
+                       <h2>Fill in the Blank with the correct answer:</h2>
+                    </div>
+                </div>
+
+        <input id="collapsible3" class="toggle" type="checkbox"> 
+            <label for="collapsible3" class="lbl-toggle" tabindex="0">Drag and Drop</label>
+                <div class="collapsible-content">
+                    <div class="content-inner">
+                        <h2>TCP/IP Network Layers</h2>
+                    </div>
+                </div>
+
+        <input id="collapsible4" class="toggle" type="checkbox"> 
+            <label for="collapsible4" class="lbl-toggle" tabindex="0">True or False</label>
+                <div class="collapsible-content">
+                    <div class="content-inner">
+                       <h2>Answer the following True/False Questions</h2>
+                    </div>
+                </div>
+
+        <footer>
+              <div class = "references">
+                    <h2>References</h2>
+                            <ul>
+                                <li>Y. Li, D. Li, W. Cui and R. Zhang, "Research based on OSI model," 2011 IEEE 3rd International Conference on Communication Software and Networks, Xi'an, China, 2011, pp. 554-557, doi: 10.1109/ICCSN.2011.6014631.</li>
+                                <li>“Introductory networking,” TryHackMe, https://tryhackme.com/room/introtonetworking (accessed Nov. 24, 2023).</li>
+                                <li>“History of TCP/IP,” GeeksforGeeks, https://www.geeksforgeeks.org/history-of-tcp-ip/ (accessed Nov. 24, 2023). </li>
+                                <li>D. Bodnar, What is TCP/IP?, https://www.avg.com/en/signal/what-is-tcp-ip#:~:text=There%20are%20four%20layers%20of%20the%20TCP%2FIP%20model%3A,in%20reverse%20order%20when%20the%20data%20is%20received. (accessed Nov. 25, 2023). /li>
+                            </ul>
+                </div>
+        </footer>
+
+    </div>
+
+
+    <script>
+        let myLabels = document.querySelectorAll('.lbl-toggle'); Array.from(myLabels).forEach(label => { label.addEventListener('keydown', e => { if (e.which === 32 || e.which === 13) { e.preventDefault(); label.click(); }; }); });
+        </script>
+
+
+</body>
+</html>
