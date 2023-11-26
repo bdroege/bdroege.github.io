@@ -332,3 +332,45 @@ footer {
     background-color: #ffffff00;
     transition: background-color 0.3s;
 }
+
+/* PHISHING OPTIONS Section */
+
+.phishing-container {
+    text-align: left;
+    max-width: auto;
+    margin: auto; 
+}
+.phishing-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    color:#37ff00;
+    border: 1px solid #37ff00;
+    border-radius: 20px;
+    background-color: #ffffff00;
+    transition: background-color 0.3s;
+}
+
+.phishing-btn.correct {
+    background-color: #37ff005a; /* Green for correct answer */
+}
+
+.phishing-btn.incorrect {
+    background-color: #ff00005a; /* Red for incorrect answer */
+}
+
+.code-block-container {
+    max-width: auto;
+    margin: auto;
+    justify-content: center;
+    display: flex; 
+}
+.code-block {
+    width: 600px;
+    padding: 5px;
+    border: 1px dashed #37ff00;
+    border-radius: 20px;
+    margin: 10px;
+}
+

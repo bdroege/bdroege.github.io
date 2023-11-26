@@ -23,6 +23,7 @@
     <script src="scripts\typewriter.js"></script>
     <script src="scripts\truefalsevalidation.js"></script>
     <script src="scripts\fitbvalidation.js"></script>
+    <script src="scripts\phishingCheck.js"></script>
 
 
 
@@ -36,35 +37,116 @@
                         Integrity - detect unathorized writing of information<br>
                         Availability - data is available in a timely manner when needed<br>
                     </ol>
-
+                    Network Security centers on the protection of digital information against an array of threats and attacks. As a common practice, the least trust model is the best model. Trust is always granted in degrees, and trust assessments carry some uncertainty. While we have auditing tools to verify our given trust, it’s important to note this trust can go a long way and do serious harm to a system. This brings up the idea of risk assessment, is the impact high? is the threat prominent, and is our system highly vulnerable and subject to attack? We’ll look at the broad aspect of Network Security and focus on our main goals, authenticity with the threat of spoofing, integrity with the threat of tampering, non-repudiability with the threat of repudiation, confidentiality with the threat of information disclosure, availability with the threat of denial of service, and authoritzation with the threat of elevation of privilege. All these threats and vulnerabilities, luckily, come with mitigations, and ways to prevent or reduce the severity of an attack
                 </p>
 
         </div>
         <input id="collapsible1" class="toggle" type="checkbox"> 
-            <label for="collapsible1" class="lbl-toggle" tabindex="0">Network Layers Explained</label>
+            <label for="collapsible1" class="lbl-toggle" tabindex="0">Network Security Vulnerabilities - Buffer Overflow</label>
                 <div class="collapsible-content">
                     <div class="content-inner">
-                        <h2>So what is the TCP/IP Model? </h2>
+                        <h2>Buffer Overflow </h2>
+                        <p>
+                            Buffer Overflow occurs when a program or shell writes more data to a block of memory, or the buffer, than it was allocated to hold. The extra bits, overflow, can cause unpredictable behavior and be an open door for attackers to execute malicious code or control the program behavior. This typically happens when copying the strings of characters from one buffer to another, which tricks the program into executing the remainder rather than processing it. For protecting and mitigating, the easiest way to fix is with secure programming. With C and C++ making the user manage memory, it’s important to employ secure coding with up-to-date libraries and methods. 
+                        </p>
+                        <div class="code-block-container">
+                            <div class="code-block">
+                            <h3>C Code Snippet: Buffer Overflow</h3>
+                            <pre>
+1.  #include <string.h>
+2.  #inlcude <stdio.h>
+3.      int main(void) { 
+4.          char passwordBuffer[10]; 
+5.          int passwordAccess = 0;
+6.
+7.          printf("Enter Password: \n");
+8.          gets(passwordBuffer);
+9.          
+10.         if(strcmp(passwordBuffer, "password")) {
+11.             printf("Wrong!");
+12.         } else {
+13.             printf("Correct!");
+14.             passwordAccess = 1;
+15.         }
+16.         
+17.     }
+                            </pre>
+                        </div>
+                        <div class="code-block">
+                            <h3>C Code Snippet: Buffer Overflow Explanation</h3>
+                            <pre>
+1.  
+2.  
+3.       
+4.  // Here, we are setting the buffer of our password to 10 bytes on our heap
+5.  // Setting a bit of 0 & 1 to grant access if the password is correct
+6.
+7.         
+8.  // In C, the gets() function does NOT check the array bounds 
+9.  // this means we can write OUTSIDE the allocated buffer - use fgets() instead        
+10. // strncmpy() relies are a null-terminator, use strncmpy() instead
+11. 
+12. // For the below line, an attacker just has to supply a password more than 10
+13. // bytes, this will overwrite the memory of "passwordAccess" and change it to 1
+14.             passwordAccess = 1; // thus granting access here!
+15.         
+16. // White the correct password is "password", an input of "passwordddddddd" will        
+17. // also grant access    
+                            </pre>
+                        </div>
+                    </div>
+
                     </div>
                 </div>
         <input id="collapsible2" class="toggle" type="checkbox"> 
-            <label for="collapsible2" class="lbl-toggle" tabindex="0">Fill in the Blank</label>
+            <label for="collapsible2" class="lbl-toggle" tabindex="0">Network Security Vulnerabilities - Phishing</label>
                 <div class="collapsible-content">
                     <div class="content-inner">
-                       <h2>Fill in the Blank with the correct answer:</h2>
+                       <h2>Phishing Attacks</h2>
+                       <p>
+                        We’ll move towards phishing attacks and the umbrella that clouds this attack and mitigation. In a sense, phishing attacks are the combination of social engineering and technology to gain restricted access to information from the end user. Phishing attacks aim to be deceptive, exploit human vulnerability, and lure credentials from unsuspecting victims. For a simple approach, we’ll look at web-based phishing that is deceptive in nature and is meant to confuse and trick the victim, such as App1e.com – at a quick glance, it could easily look like Apple.com and make the user (victim) feel comfortable and confident in the site when going to log in
+                       </p>
+
+                    <h3>Now You Try! - Click the PHISHING attempts! (If you are correct, it will highlight in red!)</h3>
+                       <div class="phishing-container">
+                            <button class="phishing-btn" onclick="checkAnswerPH(this)" data-correct="true">mike@micros0ft.com</button>
+                            <button class="phishing-btn" onclick="checkAnswerPH(this)" data-correct="true">App1e.com</button>
+                            <button class="phishing-btn" onclick="checkAnswerPH(this)" data-correct="false">Target.com</button>
+                            <button class="phishing-btn" onclick="checkAnswerPH(this)" data-correct="true">VValmart.com</button>
+                            <button class="phishing-btn" onclick="checkAnswerPH(this)" data-correct="true">lnstagram.com</button>
+                            <button class="phishing-btn" onclick="checkAnswerPH(this)" data-correct="false">Nike.com</button>
+                            <button class="phishing-btn" onclick="checkAnswerPH(this)" data-correct="true">support@vvix.com</button>
+                            <button class="phishing-btn" onclick="checkAnswerPH(this)" data-correct="true">ClickThisLink.com</button>
+                            <button class="phishing-btn" onclick="checkAnswerPH(this)" data-correct="false">Google.com</button>
+                       </div>
+                    <br>
+                <p>Did you get all six phishing attempts?!
+                    <br>It's important to look out for some of the more common switchups, such as '1' for 'l' or 'I' or 'o' for '0', another good one is using two 'v's to fake a 'w', (vv)(w).
+                    <br>Hint: Look at the "Instagram.com" example, notice anything about it? What about "lnstagram.com" - can you spot the difference?
+                </p>
+
                     </div>
                 </div>
 
         <input id="collapsible3" class="toggle" type="checkbox"> 
-            <label for="collapsible3" class="lbl-toggle" tabindex="0">Drag and Drop</label>
+            <label for="collapsible3" class="lbl-toggle" tabindex="0">Network Security Taxonomy</label>
                 <div class="collapsible-content">
                     <div class="content-inner">
-                        <h2>TCP/IP Network Layers</h2>
+                        <h1>Network Security Taxonomy</h1>
+                        <p>A categorization of components, vulnerabilities, attacks, and mitigations. A strong way to understand where and how attacks originate and how they impact the network. In our case, we can look at four main categories, Header-Based, Protocol-Based, Authentication-Based, and Traffic-Based</p>
+                        <h3>Header-Based Vulnerabilities & Attacks</h3>
+                        <p> Header-based attacks typically involve manipulating or exploiting the headers of network protocols or even web applications. In these situations, our headers contain instructions, or metadata that are vital for the communication between the different components in a network. A common attack here is an injection attack where an attacker inserts malicious code into the HTTP headers, and that results in cache poisoning, cross-site scripting, and general security issues.</p>
+                        <h3>Protocol-Based Vulnerabilities & Attacks</h3>
+                        <p>Moving down, we can look at Protocol-based attacks and understand that the packets being sent are valid, but there is a procedural aspect of the protocol that is being violated. A brief understanding is that these packets are being sent out of order, at the wrong speed, sending them to the wrong destination, and just a general miscommunication, whether deliberate or accidental. In this section, we should now have an understanding that Network Protocols are a set of rules that govern and control how data is transmitted, received, and processed. Some common attacks within this based taxonomy could fall under a classic Man-in-the-Middle (intercepts packets in transit) attack where the attacker could then elevate and do Packet Sniffing (capturing and inspecting data packets that flow through a network), which allows the attacker to compromise our CIA-Triad.</p>
+                        <h3>Authentication-Based Vulnerabilities & Attacks</h3>
+                        <p>Authentication-based vulnerabilities are more than just obtaining a username and password, they involve exploiting the weaknesses in an authentication mechanism designed to verify the identity of a user or system. Authentication is how systems ensure that only authorized entities are given access to information and resources - a vulnerability here can be detrimental to an organization or person. The integrity of a person or system is put on blast and threatened by these kinds of attacks. As discussed earlier, a common attack of this category is phishing, the act of tricking individuals to reveal sensitive information. We can also look at password hashing, brute force attacks, and general social engineering to gain intel and information on a user or system. When speaking of authentication, it’s important to look at the three main types: something you know, something you have, and something you are.</p>
+                        <h3>Traffic-Based Vulnerabilities & Attacks</h3>
+                        <p>We can then move to the final category, Traffic-based vulnerabilities. As the name suggests, it’s the involvement of exploiting the weakness in the handling, interpretation, and transmission of network traffic. Traffic-based attacks are able to threaten every element of confidentiality, integrity, and availability. Through the ability to sniff packets, spoof DNS, poison caches, and even have a complete denial of service, these attacks can occur because the transmitted data cannot be properly handled, and this is a foothold for attackers to attack.</p>
                     </div>
                 </div>
 
         <input id="collapsible4" class="toggle" type="checkbox"> 
-            <label for="collapsible4" class="lbl-toggle" tabindex="0">True or False</label>
+            <label for="collapsible4" class="lbl-toggle" tabindex="0">Under Construction</label>
                 <div class="collapsible-content">
                     <div class="content-inner">
                        <h2>Answer the following True/False Questions</h2>
@@ -75,10 +157,15 @@
               <div class = "references">
                     <h2>References</h2>
                             <ul>
-                                <li>Y. Li, D. Li, W. Cui and R. Zhang, "Research based on OSI model," 2011 IEEE 3rd International Conference on Communication Software and Networks, Xi'an, China, 2011, pp. 554-557, doi: 10.1109/ICCSN.2011.6014631.</li>
-                                <li>“Introductory networking,” TryHackMe, https://tryhackme.com/room/introtonetworking (accessed Nov. 24, 2023).</li>
-                                <li>“History of TCP/IP,” GeeksforGeeks, https://www.geeksforgeeks.org/history-of-tcp-ip/ (accessed Nov. 24, 2023). </li>
-                                <li>D. Bodnar, What is TCP/IP?, https://www.avg.com/en/signal/what-is-tcp-ip#:~:text=There%20are%20four%20layers%20of%20the%20TCP%2FIP%20model%3A,in%20reverse%20order%20when%20the%20data%20is%20received. (accessed Nov. 25, 2023). /li>
+                                <li>L. Kohnfelder, Designing Secure Software a Guide for Developers. San Francisco: No Starch Press, 2022. </li>
+                                <li>L. Feifei, "The principle and prevention of windows buffer overflow," 2012 7th International Conference on Computer Science & Education (ICCSE), Melbourne, VIC, Australia, 2012, pp. 1285-1288, doi: 10.1109/ICCSE.2012.6295299.</li>
+                                <li>“URL phishing: What it is, Real World Examples; Strategies,” Valimail, https://www.valimail.com/guide-to-phishing/url-phishing-real-world-examples-strategies/#:~:text=Types%20of%20URL%20Phishing%20%20%20%20Type,is%20effectiv%20...%20%201%20more%20rows%20 (accessed Nov. 26, 2023).  </li>
+                                <li>“Adversary-in-the-middle: DHCP spoofing,” Adversary-in-the-Middle: DHCP Spoofing, Sub-technique T1557.003 - Enterprise | MITRE ATT&amp;CK®, https://attack.mitre.org/techniques/T1557/003/ (accessed Nov. 26, 2023).  </li>
+                                <li>“Authentication vulnerabilities,” Web Security Academy, https://portswigger.net/web-security/authentication (accessed Nov. 26, 2023).</li>
+                                <li>“Adversary-in-the-middle: LLMNR/NBT-NS poisoning and SMB relay,” Adversary-in-the-Middle: LLMNR/NBT-NS Poisoning and SMB Relay, Sub-technique T1557.001 - Enterprise | MITRE ATT&CK®, https://attack.mitre.org/techniques/T1557/001/ (accessed Nov. 26, 2023). </li>
+                                <li>Yoram Orzach; Deepanshu Khanna, Network Protocols for Security Professionals: Probe and identify network-based vulnerabilities and safeguard against network protocol breaches , Packt Publishing, 2022.</li>
+                                <li>D. Jacobson, Introduction to Network Security. Boca Raton: Chapman & Hall/CRC, 2009. </li>
+                                <li>“HTTP response splitting,” HTTP Response Splitting | OWASP Foundation, https://owasp.org/www-community/attacks/HTTP_Response_Splitting (accessed Nov. 26, 2023). </li>
                             </ul>
                 </div>
         </footer>
