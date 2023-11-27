@@ -1,10 +1,12 @@
+// helper website: https://www.digitalocean.com/community/tutorials/js-drag-and-drop-vanilla-js
+
 function drop(event) {
     event.preventDefault();
     var data = event.dataTransfer.getData("text");
     var draggedElement = document.getElementById(data);
     var dropzone = event.target;
 
-    // Check if the dragged element's data-catagory matches the expected value for the dropzone
+    // check for accuracy
     if (draggedElement.dataset.catagory === dropzone.parentElement.dataset.catagory) {
         dropzone.appendChild(draggedElement);
     } else {
@@ -51,6 +53,6 @@ function validate() {
   });
 
   if (allCorrect) {
-    alert("Congratulations! You have placed all words correctly.");
+    alert("Congratulations! - completed");
   }
 }

@@ -1,3 +1,9 @@
+// Linked below are the resources that helped me execute my goal of simulating a static router
+
+// Javascript helper: https://javascript.info/
+// Javascript helper: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction
+
+
 function route() {
     var inputElement = document.getElementById("ipInput");
     var resultElement = document.getElementById("routeResult");

@@ -1,3 +1,5 @@
+// inspiration: https://dev.to/erins5927/create-a-rain-effect-in-html-5-with-javascript-and-css-dfm
+
 document.addEventListener("DOMContentLoaded", function() {
     const rainContainer = document.getElementById("rain-container");
   
@@ -6,10 +8,10 @@ document.addEventListener("DOMContentLoaded", function() {
       drop.className = "raindrop";
       rainContainer.appendChild(drop);
 
-      // Set random initial position for each raindrop
+      // Sets the position of my green droplets
       drop.style.left = `${Math.random() * 100}vw`;
 
-      // Set a random animation duration for each raindrop
+      // sets the lifespan
       drop.style.animationDuration = `${Math.random() * 1 + 0.5}s`;
     }
 });

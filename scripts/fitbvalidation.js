@@ -6,10 +6,10 @@ function checkAnswer(questionId) {
     var correctAnswer = userAnswer.getAttribute('data-answer').toLowerCase();
 
     if (userAnswer.value.toLowerCase() === correctAnswer) {
-        userAnswer.style.backgroundColor = '#37ff0050'; // Green for correct
+        userAnswer.style.backgroundColor = '#37ff0050'; // correct
         resultElement.textContent = 'Correct';
     } else {
-        userAnswer.style.backgroundColor = '#ff00005a'; // Red for incorrect
+        userAnswer.style.backgroundColor = '#ff00005a'; // incorrect
         resultElement.textContent = 'Incorrect';
 
         setTimeout(function () {
