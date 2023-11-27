@@ -16,51 +16,92 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="#">Credits</a>
-            <a href="#">Modules</a>
         </nav>
     </header>
     <script src="scripts\rain.js"></script>
     <script src="scripts\typewriter.js"></script>
     <script src="scripts\truefalsevalidation.js"></script>
     <script src="scripts\fitbvalidation.js"></script>
+    <script src="scripts\routingTable.js"></script>
 
 
 
 
     <div class="wrap-collapsible"> 
         <div class="page-top">
-            <h1>Understanding the Background</h1>
-                <p>Starting back in 1984, the OSI Model (Open System Interconnection) was first published by the ISO (International Organization for Standardization) and developed to to address the heterogeneous network interconnection compatibility issues.</p>
-
+            <h1>Network Layers Overview</h1>
+                <p>The Network Layer plays the heart and soul of how communication occurs within a network and the Internet. Within this layer, we'll see the responsibilities of addressing, routing, packet headers, and forwarding data between devices across the Internet.</p>
+               <p>When looking at the Network Layer, we'll see the Internet Protocol (IP) in place along with Internet Control Message Protocol (ICMP) and ARP.</p> 
+                <p>The Network Layer involves the use of routers and switches that help direct traffic. We'll use IP Address and subnetting to help getting our packet to the correct destination.
+                    This is done with the help of routers and devices analyzing the different header types and being able to translate the values into a purpose, a destination, or a type.
+                </p>
         </div>
         <input id="collapsible1" class="toggle" type="checkbox"> 
-            <label for="collapsible1" class="lbl-toggle" tabindex="0">Network Layers Explained</label>
+            <label for="collapsible1" class="lbl-toggle" tabindex="0">IPv4 & Routing Traffic</label>
                 <div class="collapsible-content">
                     <div class="content-inner">
-                        <h2>So what is the TCP/IP Model? </h2>
+                        <h2>IPv4 - Internet Protocol version 4</h2>
+                        <p>
+                            This version has an address format of 32 bits represented as four sets of decimal numbers separated by dots (e.g., 192.168.0.1). This limits our potential unique address to 232 possible combinations. This version supports subnetting and subnet masks that allow for smaller subnetworks for more efficient address allocation and addressing. As we dive further, our IPv4 header contains the source and destination address, the header length, the time-to-live, and the protocol type. To get an understanding of how the IPv4  header works and communicates, let’s look at how it communicates with a device. The device wanting an address will send a Gateway Announce Message with the type, length, gateway IP, and gateway MAC. Once the device receives it, it will request a unique MAC, Device Address Request, and then an IPv4 address from the free pool is sent to the device with a Device Address Response, and then the device confirms it with a Device Address Confirm with its new allocated IP and MAC.
+                        </p>
+                        <h2>Routing & Routing Tables</h2>
+                        <p>
+                            Now that we have an understanding of how IP addresses are assigned, let’s focus on how they cross the Internet and end up at their desired location. Routers are the internal routing tables that make decisions on how to route packets along a network path. It can be compared to a train timetable, where train passengers consult to decide which train to catch. In a simple sense, a router receives a packet, reads the header(s) of the packet to see the destination, and then determines where to route the packet based on the information in its specific routing table. Now, we’ll see that routing tables can be static, where they are predefined by a network administrator,  or they can be dynamic, where they use routing protocols to determine the shortest and fastest route - kind of like Google Maps.
+                        </p>
+
+                        <div class="routing-table-container">
+                            <h2>Routing Table</h2>
+                            <table class="routing-table">
+                                <tr>
+                                    <th>Network</th>
+                                    <th>Next Hop</th>
+                                </tr>
+                                <tr>
+                                    <td>172.16.0.1/24</td>
+                                    <td>Router A</td>
+                                </tr>
+                                <tr>
+                                    <td>104.16.249.249/32</td>
+                                    <td>Router B</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="routing-table-input">
+                            <h2>Enter Destination IP Address</h2>
+                            <input type="text" class="routing-input" id="ipInput" placeholder="Enter IP Address">
+                            <button class="routing-btn" onclick="route()">Route</button>
+                        </div>
+                        <div class="routing-table-result">
+                            <h2>Routing Result</h2>
+                            <p id="routeResult"></p>
+                        </div>
+                        <p>Try some out! Perhaps 172.16.0.5 or 104.16.249.251! See why some are able to route, while others cannot!</p>
                     </div>
                 </div>
         <input id="collapsible2" class="toggle" type="checkbox"> 
-            <label for="collapsible2" class="lbl-toggle" tabindex="0">Fill in the Blank</label>
+            <label for="collapsible2" class="lbl-toggle" tabindex="0">Packet Headers & Encapsulation</label>
                 <div class="collapsible-content">
                     <div class="content-inner">
-                       <h2>Fill in the Blank with the correct answer:</h2>
+                       <h1>Packet Headers</h1>
+                       <p>
+                        When we dig deeper into routing and look at how the routers know where to send the packets, we need to understand packet headers and packet encapsulation. A packet header is like a label or manifest for data. It provides information about the origin, the destination, and the contents within. Think of it this way, when you have a collection of papers needing to be in a certain order, you would label them, 1/10, 2/10, 3/10, etc., so for packets, the network is able to read it like that know where the packets came from, what they are for, and how to process them. For each layer the packet passes through, a header will be attached to that protocol. This is the formal way of formatting the data so a computer can properly interpret it. 
+                       </p>
+                       <h3>IP Header & Friends</h3>
+                       <p>
+                         Now that we have a general understanding of packet headers, let’s dial it on the IP Header. The main information gathered here is the source IP address, the destination IP address, the size of the packet, and the time-to-live of the packet – an honorable mention for fragmentation as well. Now that we know the IP address, it’s important to look at the hardware address, this is where ARP (Address Resolution Protocol) comes into play as it works to translate an IP address to a Physical Address (MACs). ARP will broadcast a packet to all the devices of the source network in an effort to have one device communicate with others over the open internet. Now immediately, it’s important to look at the risks of ARP Spoofing and Cache Poisoning. Since ARP is designed to send a broadcast packet out, an attacker could use a false or malicious MAC address and link it to an IP Address of an unsuspecting computer. While the Internet Protocol is the overarching dominance of the network layer, it does have help, ICMP, Internet Control Message Protocol. The name is pretty intuitive, it’s a protocol meant to diagnose network communication issues and report any errors or issues within the network. So let’s say a packet of data is too large for a router to handle, the router will immediately drop the packet and activate the ICMP to alert the sender. While this sounds like a great tool for network administrators, think about the risk and strain it puts on a network; for example, the ICMP Flood Attack, or the infamous ping of death attack - this is a great “tool” for a DDOS/DOS attack. As the theme suggests, an ICMP packet sits after a standard IP header, this is so that the protocol has a stored copy of the source and destination in the event an error message needs to be delivered. ICMP also dabbles in fire by being a connectionless protocol - where a device doesn’t need to have an open connection to receive an alert, this differs from TCP by removing the security element of a reliable agreeable connection.
+                       </p>
+                       <h1>Packet Encapsulation</h1>
+                       <p>
+                        To wrap it up, think of packet encapsulation as wrapping up all of the data with the additional information and headers gathered along the way. As mentioned previously, each layer likes to add its own touch and tack on a header, so now we have this hierarchical structure of packets within packets. As we learned from the OSI model, our physical data link layer will start with encapsulating the data into frames. These frames are then encapsulated into packets with the Internet Protocol and any other protocol used within the Network Layer. We then see our packet get transported and encapsulated into segments, where we finally see the data being portrayed in a readable format. All throughout the life of data, packet encapsulation is how the data is sent through each layer, through each form, and through all the curveballs life throws at it.
+                       </p>
                     </div>
                 </div>
 
         <input id="collapsible3" class="toggle" type="checkbox"> 
-            <label for="collapsible3" class="lbl-toggle" tabindex="0">Drag and Drop</label>
+            <label for="collapsible3" class="lbl-toggle" tabindex="0">Test your Knowledge</label>
                 <div class="collapsible-content">
                     <div class="content-inner">
-                        <h2>TCP/IP Network Layers</h2>
-                    </div>
-                </div>
-
-        <input id="collapsible4" class="toggle" type="checkbox"> 
-            <label for="collapsible4" class="lbl-toggle" tabindex="0">True or False</label>
-                <div class="collapsible-content">
-                    <div class="content-inner">
-                       <h2>Answer the following True/False Questions</h2>
+                        <h2>Work in progress - all reasearch and content collected, will spend this week implementing and making pretty</h2>
                     </div>
                 </div>
 
@@ -68,10 +109,14 @@
               <div class = "references">
                     <h2>References</h2>
                             <ul>
-                                <li>Y. Li, D. Li, W. Cui and R. Zhang, "Research based on OSI model," 2011 IEEE 3rd International Conference on Communication Software and Networks, Xi'an, China, 2011, pp. 554-557, doi: 10.1109/ICCSN.2011.6014631.</li>
-                                <li>“Introductory networking,” TryHackMe, https://tryhackme.com/room/introtonetworking (accessed Nov. 24, 2023).</li>
-                                <li>“History of TCP/IP,” GeeksforGeeks, https://www.geeksforgeeks.org/history-of-tcp-ip/ (accessed Nov. 24, 2023). </li>
-                                <li>D. Bodnar, What is TCP/IP?, https://www.avg.com/en/signal/what-is-tcp-ip#:~:text=There%20are%20four%20layers%20of%20the%20TCP%2FIP%20model%3A,in%20reverse%20order%20when%20the%20data%20is%20received. (accessed Nov. 25, 2023). /li>
+                                <li>“IP address,” Wikipedia, https://en.wikipedia.org/wiki/IP_address (accessed Nov. 26, 2023).</li>
+                                <li>S. Rajashree, K. S. Soman and P. G. Shah, "Security with IP Address Assignment and Spoofing for Smart IOT Devices," 2018 International Conference on Advances in Computing, Communications and Informatics (ICACCI), Bangalore, India, 2018, pp. 1914-1918, doi: 10.1109/ICACCI.2018.8554660.</li>
+                                <li>What is routing? | IP routing | cloudflare, https://www.cloudflare.com/learning/network-layer/what-is-routing/ (accessed Nov. 26, 2023). </li>
+                                <li>What is a packet? | network packet definition | cloudflare, https://www.cloudflare.com/learning/network-layer/what-is-a-packet/ (accessed Nov. 27, 2023). </li>
+                                <li>“How address resolution protocol (ARP) works?,” GeeksforGeeks, https://www.geeksforgeeks.org/how-address-resolution-protocol-arp-works/ (accessed Nov. 26, 2023). </li>
+                                <li>What is ICMP? | internet control message protocol | cloudflare, https://www.cloudflare.com/learning/ddos/glossary/internet-control-message-protocol-icmp/ (accessed Nov. 27, 2023). </li>
+                                <li>D. Jacobs, “Intro to encapsulation and Decapsulation in networking: TechTarget,” Networking, https://www.techtarget.com/searchnetworking/tip/Intro-to-encapsulation-and-decapsulation-in-networking (accessed Nov. 26, 2023).</li> 
+                                
                             </ul>
                 </div>
         </footer>

@@ -374,3 +374,49 @@ footer {
     margin: 10px;
 }
 
+/** ROUTING TABLE EXAMPLE **/
+
+.routing-table-container {
+    margin-bottom: 20px;
+}
+
+.routing-table {
+    width: 35%;
+    border-collapse: collapse;
+}
+
+.routing-table, .routing-table th, .routing-table td {
+    border: 1px dashed #37ff00;
+  }
+
+  .routing-table th, .routing-table td {
+    padding: 8px;
+    text-align: left;
+  }
+
+.routing-table-input {
+    margin-bottom: 20px;
+}
+.routing-input {
+    padding: 8px;
+    border: 1px solid darkgreen;
+    border-radius: 20px;
+    background-color: darkgreen;
+    color: white;
+}
+
+.routing-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    color:#37ff00;
+    border: 1px solid #37ff00;
+    border-radius: 20px;
+    background-color: #ffffff00;
+    transition: background-color 0.3s;
+}
+.routing-table-result {
+    font-weight: bold;
+}
+
