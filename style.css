@@ -420,3 +420,17 @@ footer {
     font-weight: bold;
 }
 
+.IPv4-container {
+    display:flex;
+}
+
+
+.IPv4-box {
+    width: flex;
+    height: 50px;
+    border: 1px solid #37ff00;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}

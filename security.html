@@ -145,10 +145,49 @@
                 </div>
 
         <input id="collapsible4" class="toggle" type="checkbox"> 
-            <label for="collapsible4" class="lbl-toggle" tabindex="0">Under Construction</label>
+            <label for="collapsible4" class="lbl-toggle" tabindex="0">Interactives</label>
                 <div class="collapsible-content">
                     <div class="content-inner">
-                       <h2>Answer the following True/False Questions</h2>
+                        <h2>Answer the following True/False Questions (The correct answer will be highlighted in a red box)</h2>
+                        <div class="tf-container">
+                            <div class="tf-question">1) The Ping of Death attack is an example of</div>
+                            <button class="btn" onclick="checkAnswerTF(this, 5)" data-correct="true">Header-Based Attack</button>
+                            <button class="btn" onclick="checkAnswerTF(this, 5)" data-correct="false">Protocol-Based Attack</button>
+                            <button class="btn" onclick="checkAnswerTF(this, 5)" data-correct="false">Authentication-Based Attack</button>
+                            <button class="btn" onclick="checkAnswerTF(this, 5)" data-correct="false">Traffic-Based Attack</button>
+                            <span class="hintText" id="hintText5"></span>
+                        </div>
+                        <br>
+                        <div class="tf-container">
+                            <div class="tf-question">2) The SYN Flood Attack is an example of</div>
+                            <button class="btn" onclick="checkAnswerTF(this, 6)" data-correct="false">Header-Based Attack</button>
+                            <button class="btn" onclick="checkAnswerTF(this, 6)" data-correct="true">Protocol-Based Attack</button>
+                            <button class="btn" onclick="checkAnswerTF(this, 6)" data-correct="false">Authentication-Based Attack</button>
+                            <button class="btn" onclick="checkAnswerTF(this, 6)" data-correct="false">Traffic-Based Attack</button>
+                            <span class="hintText" id="hintText6"></span>
+                        </div>
+                        <br>
+                        <div class="tf-container">
+                            <div class="tf-question">3) Packet sniffing is an example of</div>
+                            <button class="btn" onclick="checkAnswerTF(this, 7)" data-correct="false">Header-Based Attack</button>
+                            <button class="btn" onclick="checkAnswerTF(this, 7)" data-correct="false">Protocol-Based Attack</button>
+                            <button class="btn" onclick="checkAnswerTF(this, 7)" data-correct="false">Authentication-Based Attack</button>
+                            <button class="btn" onclick="checkAnswerTF(this, 7)" data-correct="true">Traffic-Based Attack</button>
+                            <span class="hintText" id="hintText7"></span>
+                        </div>
+                        <br>
+                        <div class="tf-container">
+                            <div class="tf-question">4) Credential Stuffing is an example of</div>
+                            <button class="btn" onclick="checkAnswerTF(this, 8)" data-correct="false">Header-Based Attack</button>
+                            <button class="btn" onclick="checkAnswerTF(this, 8)" data-correct="false">Protocol-Based Attack</button>
+                            <button class="btn" onclick="checkAnswerTF(this, 8)" data-correct="true">Authentication-Based Attack</button>
+                            <button class="btn" onclick="checkAnswerTF(this, 8)" data-correct="false">Traffic-Based Attack</button>
+                            <span class="hintText" id="hintText8"></span>
+                        </div>
+                        <br>
+                                            <br>
+                    <p>This was purely participation based meant to test your understanding and comprehension of the material presented.</p>
+
                     </div>
                 </div>
 

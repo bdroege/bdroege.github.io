@@ -98,10 +98,43 @@
                 </div>
 
         <input id="collapsible3" class="toggle" type="checkbox"> 
-            <label for="collapsible3" class="lbl-toggle" tabindex="0">Test your Knowledge</label>
+            <label for="collapsible3" class="lbl-toggle" tabindex="0">Packet Headers - Continued</label>
                 <div class="collapsible-content">
                     <div class="content-inner">
-                        <h2>Work in progress - all reasearch and content collected, will spend this week implementing and making pretty</h2>
+                        <h2>Packet Headers, IPv4</h2>
+
+                        <h3>Below is the outline of a IPv4 Header with the associated bits</h3>
+                        <div class="IPv4-container">
+                            <div class="IPv4-box">Version (4 Bits)</div>
+                            <div class="IPv4-box">HLEN (4 Bits)</div>
+                            <div class="IPv4-box">Type of Service (8 Bits)</div>
+                            <div class="IPv4-box">Total Length (16 Bits)</div>
+                            <div class="IPv4-box">ID (16 Bits)</div>
+                            <div class="IPv4-box">Flags (3 Bits)</div>
+                            <div class="IPv4-box">Offset (13 Bits)</div>
+                            <div class="IPv4-box">Time to Live (8 Bits)</div>
+                            <div class="IPv4-box">Protocol (8 Bits)</div>
+                            <div class="IPv4-box">Checksum (16 Bits)</div>
+                            <div class="IPv4-box">Source IP Address (32 Bits)</div>
+                            <div class="IPv4-box">Destination IP Address (32 Bits)</div>
+                        </div>
+                        <p>
+                            Given the following Hex Packet snippet captured from Wireshark, let's analyze the meaning behind the values: <br><br> <strong>45 40 00 1C 32 4D 00 00 38 01 7F D5 76 62 E3 65 D5</strong><br>
+                            <br> Version (4 bits) --> 45
+                            <br> HLEN (4 bits) --> 40 
+                            <br> Type of Service --> Typically not used and set to 0!
+                            <br> Total Length (16 bits) --> 00 1C
+                            <br> ID (16 Bits) --> 32 4D
+                            <br> Flags (3 Bits) --> 00
+                            <br> Offset (13 bits) --> 00
+                            <br> Time to Live (8 bits) --> 38 (56 in decimal)
+                            <br> Protocol (8 bits) --> 01 (Which means ICMP)
+                            <br> Checksum (16 bits) --> 7F D5
+                            <br> Source IP Address (32 bits) -->  76 62 E3 65 (118.98.227.101)
+                            <br> Destination IP Address (32 bits) --> D5 E1 A0 D5 (213.225.160.213)
+                        </p>
+
+
                     </div>
                 </div>
 
